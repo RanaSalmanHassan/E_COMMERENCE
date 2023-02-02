@@ -1,0 +1,72 @@
+{%extends 'base.html'%}
+
+
+{%block titleblock%}
+Product Page
+{%endblock%}
+
+{%block bodyblock%}
+
+<div class="container my-5">
+    <h2 class="my-5">Featured Products</h2>
+
+    <div class="row">
+        {%for product in object_list%}
+        <div class="col-md-6 col-sm-12 col-lg-13">
+            <figure class="card card-product">
+                <div class="img-wrap">
+                    <img src="/media/{{product.image}}" style="height: 100%; width: 100%;">
+
+
+
+
+                </div>
+
+                <figcaption class="info-wrap">
+                    <h6 class="title"> <a href="{%url 'shop:product_details' pk=product.pk%}">{{product.name}}</a> </h6>
+                    <div class="action-wrap">
+                        <span class="price-new"> $ {{product.price}}</span>
+                        <span class="price-old"><strike> $ {{product.old_price}}</strike></span>
+
+
+
+                    </div>
+
+
+
+                </figcaption>
+
+
+
+
+            </figure>
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{%endfor%}
+
+
+{%endblock%}

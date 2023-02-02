@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+
+{%block titleblock%}
+CHANGE PROFILE!
+{%endblock%}
+
+{%block bodyblock%}
+<h2>Proifle Page:  </h2>
+<form method="post">
+    {%csrf_token%}
+    {{form}}
+    <input type="submit" placeholder="Sign Up">
+
+
+</form>
+{%endblock%}

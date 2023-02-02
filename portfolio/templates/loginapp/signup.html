@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+
+{%block titleblock%}
+SIGNED UP
+{%endblock%}
+
+{%block bodyblock%}
+<h2>Create New Account: </h2>
+<form method="post">
+    {%csrf_token%}
+    {{form}}
+    <input type="submit" placeholder="Sign Up">
+
+
+
+
+</form>
+<a href="{%url 'loginapp:login'%}">Have An Account?</a>
+{%endblock%}
